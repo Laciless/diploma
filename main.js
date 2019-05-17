@@ -63,6 +63,8 @@ function branch(length, width, angleAll, angleBranch, scale, iteration, color, c
     //     context.rotate(i*angleBranch); // Поворачиваем систему координат на какой-то угол влево
     //     branch(branches, length * scale, width, angleAll, angleBranch, scale, iteration-1, nextColor, colorStep); // Рекурсивно рисуем левую ветвь
     // }
+
+    //test of push
  	
     context.translate(0, length); // Сдвигаем "курсор" в конец "ствола-корня"
     context.rotate(0.5*angleAll);
