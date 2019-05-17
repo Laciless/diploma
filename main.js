@@ -1,4 +1,4 @@
-"use strict";
+//"use strict";
 
 var context = document.querySelector("canvas").getContext("2d");
 const firstColorPicker = document.getElementById("colorStart");
@@ -18,7 +18,8 @@ function hexToRgb(hex) {
     } : null;
 }
   
-function draw() {
+function draw() {  
+
     const startColor = hexToRgb(firstColorPicker.value);
     const endColor = hexToRgb(endColorPicker.value);
     const iterations = iterationsInput.value; 
@@ -28,41 +29,48 @@ function draw() {
     const gStep = Math.floor((startColor.g - endColor.g) / iterations);
     const bStep = Math.floor((startColor.b - endColor.b) / iterations);
 
-    branch(length, 2, 0.7, 0.75, iterations, startColor, {
+    context.save(); // Сохраняем текущее состояние системы координат
+    context.clearRect(0, 0, context.canvas.width, context.canvas.height) //Очищаем холст
+    context.translate(document.querySelector("canvas").clientWidth / 2, 0); // Центрируем дерево
+
+    branch(length, 2, 0.4, 0.7, 0.75, iterations, startColor, {
         r: rStep,
         g: gStep,
         b: bStep
     });
+
+    context.restore(); // Восстанавливаем начальное состояние системы координат
 }
 
-function branch(length, width, angle, scale, iteration, color, colorStep) {
+function branch(length, width, angleAll, angleBranch, scale, iteration, color, colorStep) {
     context.fillStyle = `rgb(${color.r},${color.g},${color.b})`;
     context.fillRect(0, 0, width, length); // Рисуем "ствол-корень" дерева
-    if (!iteration) // Обрываем рекурсию, когда линии становятся слишком короткими
+    if (!iteration) // Обрываем рекурсию, когда проходят все итерации
         return;
 
+   
     context.save(); // Сохраняем текущее состояние системы координат
-
-	context.translate(0, length); // Сдвигаем "курсор" в конец "ствола-корня"
-    //context.rotate(-angle); // Поворачиваем систему координат на какой-то угол влево
 
     const nextColor = {
         r: color.r - colorStep.r,
         g: color.g - colorStep.g,
         b: color.b - colorStep.b,
     }
-    branch(length * scale, width, angle, scale, iteration-1, nextColor, colorStep); // Рекурсивно рисуем левую ветвь
-	
-    //context.translate(0, length); // Сдвигаем "курсор" в конец "ствола-корня"
-    context.rotate(-angle); // Поворачиваем систему координат на какой-то угол влево
-    branch(length * scale, width, angle, scale, iteration-1, nextColor, colorStep); // Рекурсивно рисуем левую ветвь
 
+    // context.translate(0, length); // Сдвигаем "курсор" в конец "ствола-корня"
+    // for( i = 0; i < branches; i++)
+    // {
+    //     context.rotate(i*angleBranch); // Поворачиваем систему координат на какой-то угол влево
+    //     branch(branches, length * scale, width, angleAll, angleBranch, scale, iteration-1, nextColor, colorStep); // Рекурсивно рисуем левую ветвь
+    // }
+ 	
+    context.translate(0, length); // Сдвигаем "курсор" в конец "ствола-корня"
+    context.rotate(0.5*angleAll);
+    context.rotate(-angleBranch); // Поворачиваем систему координат на какой-то угол влево
+    branch(length * scale, width, angleAll, angleBranch, scale, iteration-1, nextColor, colorStep); // Рекурсивно рисуем левую ветвь
 	
-    context.rotate(2 * angle); // Поворачиваем систему координат на симметричный угол вправо
-    branch(length * scale, width, angle, scale, iteration-1, nextColor, colorStep); // Рекурсивно рисуем правую ветвь
+    context.rotate(2 * angleBranch); // Поворачиваем систему координат на симметричный угол вправо
+    branch(length * scale, width, angleAll, angleBranch, scale, iteration-1, nextColor, colorStep); // Рекурсивно рисуем правую ветвь
 
     context.restore(); // Восстанавливаем начальное состояние системы координат
 }
-
-context.translate(document.querySelector("canvas").clientWidth / 2, 0); // Начальный сдвиг системы координат, 
-                                                                        // чтобы центрировать дерево
