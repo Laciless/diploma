@@ -5,6 +5,7 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
+    color: white;
 }
 
 .section {
@@ -41,14 +42,18 @@ body, html {
     .link {
         height: 100%;
         border: thin solid white;
-        flex-grow: 1;
+        width: 25%;
         display: flex;
         justify-content: center;
         align-items: center;
-        
+        text-decoration: none;
+        color: inherit;
         font-weight: 700;
         font-size: 30px;
         line-height: 100%;
+        &:hover{
+            color: #c0c0c0;
+        }
     }
 }
 
@@ -79,5 +84,32 @@ body, html {
         right: 33px;
         bottom: 33px;
         height: 70%;
+    }
+}
+
+.sub-section-header {
+    font-size: 60px;
+    font-family: 'Expletus Sans', cursive;
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.about-project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .about-project-content {
+        padding-left: 33px;
+        padding-right: 25px;
+
+        img {
+            width: 240px;
+            border: thin solid black;
+            float: left;
+            margin-right: 30px;
+        }
     }
 }
