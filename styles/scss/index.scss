@@ -92,7 +92,7 @@ body, html {
     font-family: 'Expletus Sans', cursive;
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -145,13 +145,18 @@ body, html {
 
 canvas {
     border: 3px solid black;
-    // background-color: white;
 }
 
 .fg-container {
-    padding-right: 16px;
+    padding-right: 30px;
     display: flex;
     justify-content: space-between;  
+}
+
+.pg-container {
+    padding-left: 30px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .flex {
@@ -184,7 +189,18 @@ canvas {
     border-radius: 0;
     color: white;
     margin-top: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
     &.dark-green {
         background-color: $dark-green
+    }
+    &.dark-pink {
+        background-color: $dark-pink
+    }
+    &.dark-orange {
+        background-color: $dark-orange
     }
 }

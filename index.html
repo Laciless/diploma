@@ -45,7 +45,7 @@
                         <canvas id="fractalCanvas"></canvas>
                         <div class="flex full-width space-between">
                             <a class="butt dark-green" href="#" download="my-file-name.png" id="saveFractal">Save fractal</a>
-                            <button class="butt dark-green" id="useOnPoster">Use on poster</button>
+                            <a class="butt dark-green" id="useOnPoster">Use on poster</a>
                         </div>
                     </div>
                 </div>
@@ -54,7 +54,26 @@
                 <h1 class="sub-section-header">
                     Poster constructor
                 </h1>
-                <canvas id="posterCanvas"></canvas>
+                <div class="pg-container">
+                    <div>
+                        <canvas id="posterCanvas"></canvas>
+                        <div class="flex full-width space-between">
+                            <a class="butt dark-pink" id="modifyFractal">Modify fractal</a>
+                            <a class="butt dark-pink" href="#" download="poster.png" id="savePoster">Save poster</a>
+                        </div>
+                    </div>
+                    <div class="flex column space-around">
+                        <input type="number" placeholder="font size" value="20" id="fontSizeInput"/>
+                        <select value="Times New Roman" id="fontFamily">
+                            <option value="Times New Roman">Times New Roman</option>
+                            <option value="Roboto">Roboto</option>
+                            <option value="Expletus Sans">Expletus Sans</option>
+                            <option value="Comic Sans">Comic Sans</option>
+                        </select>
+                        <button id="addTextBtn">Add text</button>
+                        <button>Remove</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -98,9 +117,9 @@
 
 
 <script src="fabric.min.js"></script>
-<script src="canvas-size.js"></script>
+<script src="canvas-init.js"></script>
 <script src="main.js"></script>
 <script src="poster-generator.js"></script>
-<script src="add-image.js"></script>
+<script src="low-buttons-handler.js"></script>
 
 </html>
