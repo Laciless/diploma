@@ -220,4 +220,27 @@ canvas#fractalCanvas {
   background-color: #BF7E30;
 }
 
+.form {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.form input {
+  height: 40px;
+  width: 356px;
+}
+.form textarea {
+  height: 210px;
+}
+.form input, .form textarea {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid white;
+}
+.form .send-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+
 /*# sourceMappingURL=styles.css.map */
