@@ -6,8 +6,11 @@ const endColorPicker = document.getElementById("colorEnd");
 const iterationsInput = document.getElementById("iterations");
 const lengthInput = document.getElementById("length");
 const drawButton = document.getElementById("draw");
+const saveFractal = document.getElementById("saveFractal");
+const canvas = document.getElementById("fractalCanvas");
 
 drawButton.addEventListener('click', draw);
+saveFractal.addEventListener('click', save);
 
 function hexToRgb(hex) {
     var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -73,4 +76,8 @@ function branch(length, width, angleAll, angleBranch, scale, iteration, color, c
     branch(length * scale, width, angleAll, angleBranch, scale, iteration-1, nextColor, colorStep); // Рекурсивно рисуем правую ветвь
 
     context.restore(); // Восстанавливаем начальное состояние системы координат
+}
+
+function save() {
+    saveFractal.href= canvas.toDataURL('image/png');
 }

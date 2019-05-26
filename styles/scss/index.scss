@@ -142,3 +142,49 @@ body, html {
         }
     }
 }
+
+canvas {
+    background-color: white;
+    border: 3px solid black;
+}
+
+.fg-container {
+    padding-right: 16px;
+    display: flex;
+    justify-content: space-between;  
+}
+
+.flex {
+    display: flex;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.space-around {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.butt {
+    width: 165px;
+    height: 55px;
+    border: 3px solid white;
+    font-weight: bold;
+    font-size: 22px;
+    border-radius: 0;
+    color: white;
+    margin-top: 16px;
+    &.dark-green {
+        background-color: $dark-green
+    }
+}

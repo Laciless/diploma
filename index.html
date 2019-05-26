@@ -33,11 +33,28 @@
                 <h1 class="sub-section-header">
                     Fractal generator
                 </h1>
+                <div class="fg-container">
+                    <div class="flex column space-around">
+                        <input type="number" id="iterations" value="5" placeholder="iterations"/>
+                        <input type="number" id="length" value="100" placeholder="length" />
+                        <input type="color" id="colorStart" value="#ff0000"/>
+                        <input type="color" id="colorEnd" value="#115588"/>
+                        <button id="draw">Draw</button>
+                    </div>
+                    <div>
+                        <canvas id="fractalCanvas"></canvas>
+                        <div class="flex full-width space-between">
+                            <a class="butt dark-green" href="#" download="my-file-name.png" id="saveFractal">Save fractal</a>
+                            <button class="butt dark-green">Use on poster</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="poster_constructor" class="sub-section pink">
                 <h1 class="sub-section-header">
                     Poster constructor
                 </h1>
+                <canvas id="posterCanvas"></canvas>
             </div>
         </div>
     </div>
@@ -77,15 +94,9 @@
             </div>
         </div>
     </div>
-<canvas width="900" height="400"></canvas>
-
-<input type="number" id="iterations" value="5" placeholder="iterations"/>
-<input type="number" id="length" value="100" placeholder="length" />
-<input type="color" id="colorStart" value="#ff0000"/>
-<input type="color" id="colorEnd" value="#115588"/>
-<button id="draw">Draw</button>
 </body>
 
 <script src="main.js"></script>
+<script src="canvas-size.js"></script>
 
 </html>
