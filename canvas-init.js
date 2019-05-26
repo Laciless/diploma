@@ -6,3 +6,7 @@ fractalCanvas.height = posterCanvas.height = height;
 fractalCanvas.width = posterCanvas.width = height / 1.4;
 
 let FabricCanvas = new fabric.Canvas('posterCanvas');
+
+FabricCanvas.setBackgroundColor('white', () => {
+    FabricCanvas.renderAll();
+})

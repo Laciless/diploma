@@ -63,6 +63,8 @@
                         </div>
                     </div>
                     <div class="flex column space-around">
+                        <input type="color" id="posterColor"/>
+                        <button id="setBackgroundColor">Set background</button>
                         <input type="number" placeholder="font size" value="20" id="fontSizeInput"/>
                         <select value="Times New Roman" id="fontFamily">
                             <option value="Times New Roman">Times New Roman</option>
@@ -70,8 +72,15 @@
                             <option value="Expletus Sans">Expletus Sans</option>
                             <option value="Comic Sans">Comic Sans</option>
                         </select>
+                        <div class="flex">
+                            <button id="addCircle"><img src="./img/circle.png" /></button>
+                            <button id="addSquare"><img src="./img/square.png" /></button>
+                            <button id="addTriangle"><img src="./img/triangle.png" /></button>
+                        </div>
                         <button id="addTextBtn">Add text</button>
-                        <button>Remove</button>
+                        <button id="removeBtn">Remove</button>
+                        <button id="copyBtn">Copy</button>
+                        <button id="pasteBtn">Paste</button>
                     </div>
                 </div>
             </div>

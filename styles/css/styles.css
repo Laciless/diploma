@@ -159,6 +159,9 @@ body, html {
 canvas {
   border: 3px solid black;
 }
+canvas#fractalCanvas {
+  background-color: white;
+}
 
 .fg-container {
   padding-right: 30px;
