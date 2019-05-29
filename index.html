@@ -34,12 +34,37 @@
                     Fractal generator
                 </h1>
                 <div class="fg-container">
-                    <div class="flex column space-around">
-                        <input type="number" id="iterations" value="5" placeholder="iterations"/>
-                        <input type="number" id="length" value="100" placeholder="length" />
-                        <input type="color" id="colorStart" value="#ff0000"/>
-                        <input type="color" id="colorEnd" value="#115588"/>
-                        <button id="draw">Draw</button>
+                    <div class="">
+                        <select id="fractalType">
+                            <option value="tree">Pythagoras tree</option>
+                            <option value="julia">Julia set</option>
+                        </select>
+                        <form name="tree" class="tree">
+                            <input type="number" name="iterations" value="5" placeholder="iterations"/>
+                            <input type="number" name="branchLength" value="100" placeholder="length" />
+                            <input type="color" name="colorStart" value="#ff0000"/>
+                            <input type="color" name="colorEnd" value="#115588"/>
+                            <button id="drawTree">Draw</button>
+                        </form>
+                        <form name="juliaForm" class="juliaForm hidden">
+                            Итераций (от 100 до 1000): 
+                            <input type="number" name="maxIterations" id="maxIterations" value="450"/>
+                            Коэффициенты: (minX, от -100 до 100)
+                            <input type="number" name="minX" id="minX" value="0" placeholder="minX"/>
+                            (maxX, от -100 до 100)
+                            <input type="number" name="maxX" id="maxX" value="50" placeholder="maxX"/>
+                            (minY, от -100 до 100)
+                            <input type="number" name="minY" id="minY" value="0" placeholder="minY"/>
+                            (maxY, от -100 до 100)
+                            <input type="number" name="maxY" id="maxY" value="50" placeholder="maxY"/>
+                            (jsX, от -100 до 100)
+                            <input type="number" name="jsX" id="jsX" value="28" placeholder="jsX"/>
+                            (jsY, от -100 до 100)
+                            <input type="number" name="jsY" id="jsY" value="1" placeholder="jsY"/>
+                            <input type="color" id="colorStart" value="#ff0000"/>
+                            <input type="color" id="colorEnd" value="#115588"/>
+                            <button id="drawJulia">Draw</button>
+                        </form>
                     </div>
                     <div>
                         <canvas id="fractalCanvas"></canvas>
@@ -137,6 +162,8 @@
 <script src="fabric.min.js"></script>
 <script src="canvas-init.js"></script>
 <script src="main.js"></script>
+<script src="tree.js"></script>
+<script src="julia.js"></script>
 <script src="poster-generator.js"></script>
 <script src="low-buttons-handler.js"></script>
 

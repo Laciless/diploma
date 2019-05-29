@@ -243,4 +243,8 @@ canvas#fractalCanvas {
   justify-content: flex-end;
 }
 
+form.hidden {
+  display: none;
+}
+
 /*# sourceMappingURL=styles.css.map */

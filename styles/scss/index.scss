@@ -231,3 +231,9 @@ canvas {
         justify-content: flex-end;
     }
 }
+
+form {
+    &.hidden {
+        display: none;
+    }
+}
