@@ -44,7 +44,7 @@ function drawFractal() {
  }
 }
 
-function init() {
+function drawJulia() {
  maxIterations = parseInt(document.juliaForm.maxIterations.value);
  if (maxIterations === 'undefined') maxIterations=450;
  minX = parseFloat(document.juliaForm.minX.value)/100;
@@ -72,7 +72,9 @@ function init() {
 
 const drawButton = document.getElementById("drawJulia");
 
-drawButton.addEventListener('click', e => {
+document.juliaForm.addEventListener('submit', e => {
   e.preventDefault();
-  init()
+  e.stopPropagation();
+  drawJulia()
+  return false;
 });

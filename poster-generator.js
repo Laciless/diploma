@@ -61,20 +61,28 @@ pasteButton.addEventListener('click', () => {
 	});
 });
 
-removeButton.addEventListener('click', () => {
-    const selection = FabricCanvas.getActiveObject();
-    FabricCanvas.remove(selection)
-});
+removeButton.addEventListener('click', removeSelected);
 
 addTextButton.addEventListener('click', () => {
     addText();
 })
 
-function addImageFromUlr(imageURL) {
+function removeSelected() {
+    const selection = FabricCanvas.getActiveObject();
+    FabricCanvas.remove(selection)
+}
+
+function addImageFromUlr(imageURL, data) {
     const image = new Image();
     image.src = imageURL;
     var imgInstance = new fabric.Image(image);
+    imgInstance.fractalDescription = data;
     FabricCanvas.add(imgInstance);
+}
+
+function getFractalDescription() {
+    const selection = FabricCanvas.getActiveObject();
+    return selection && selection.fractalDescription;
 }
 
 function addText() {

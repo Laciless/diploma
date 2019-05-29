@@ -5,11 +5,12 @@ const iterationsInput = document.forms["tree"].elements["iterations"];
 const lengthInput = document.forms["tree"].elements["branchLength"];
 const drawTreeButton = document.getElementById("drawTree");
 
-drawTreeButton.addEventListener('click', (e) => {
+document.forms["tree"].addEventListener('submit', (e) => {
     e.preventDefault();
     e.stopPropagation();
     
-    draw();
+    drawTree();
+    return false;
 });
 
 function hexToRgb(hex) {
@@ -21,7 +22,7 @@ function hexToRgb(hex) {
     } : null;
 }
   
-function draw() {  
+function drawTree() {  
 
     const startColor = hexToRgb(firstColorPicker.value);
     const endColor = hexToRgb(endColorPicker.value);
