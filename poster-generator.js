@@ -73,11 +73,10 @@ function removeSelected() {
 }
 
 function addImageFromUlr(imageURL, data) {
-    const image = new Image();
-    image.src = imageURL;
-    var imgInstance = new fabric.Image(image);
-    imgInstance.fractalDescription = data;
-    FabricCanvas.add(imgInstance);
+    fabric.Image.fromURL(imageURL, function(oImg) {
+        oImg.fractalDescription = data;
+        FabricCanvas.add(oImg);
+      });
 }
 
 function getFractalDescription() {

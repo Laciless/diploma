@@ -12,7 +12,7 @@ saveFractal.addEventListener('click', () => {
 });
 
 savePoster.addEventListener('click', () => {
-    savePoster.href = posterCanvas.toDataURL('image/png');
+    savePoster.href = "data:image/svg+xml;charset=utf-8," + FabricCanvas.toSVG();
 });
 
 modifyFractal.addEventListener('click', () => {
