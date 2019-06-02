@@ -106,7 +106,7 @@ body, html {
         padding-right: 25px;
 
         img {
-            width: 240px;
+            height: 60vh;
             border: thin solid black;
             float: left;
             margin-right: 30px;
@@ -154,13 +154,33 @@ canvas {
 .fg-container {
     padding-right: 30px;
     display: flex;
-    justify-content: space-between;  
+    justify-content: flex-end;
+    .forms-container {
+        margin-right: 20px;
+        color: #000;
+        div {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            margin-bottom: 5px;
+        }
+    }
 }
 
 .pg-container {
     padding-left: 30px;
     display: flex;
-    justify-content: space-between;
+
+    .form-container {
+        margin-left: 20px;
+        >div {
+            width: 200px;
+            margin: 15px 0;
+            div {
+                margin: 5px 0;
+            }
+        }
+    }
 }
 
 .flex {
@@ -197,6 +217,7 @@ canvas {
     align-items: center;
     justify-content: center;
     text-decoration: none;
+    cursor: pointer;
 
     &.dark-green {
         background-color: $dark-green
@@ -236,4 +257,27 @@ form {
     &.hidden {
         display: none;
     }
+}
+
+input, select {
+    padding: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 3px solid white;
+    font-size: 18px;
+    border-radius: 0;
+}
+input {
+    width: 45px;
+    height: 20px;
+}
+select {
+    margin: 2px 0;
+}
+
+
+button {
+    border: thin solid black;
+    border-radius: 0;
+    height: 30px;
+    font-size: 18px;
 }

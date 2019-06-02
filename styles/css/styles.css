@@ -1,25 +1,25 @@
 .purple {
-  background-color: #946BD6;
+  background-color: #946bd6;
 }
 
 .pink {
-  background-color: #EE6B9C;
+  background-color: #ee6b9c;
 }
 
 .green {
-  background-color: #B3F36D;
+  background-color: #b3f36d;
 }
 
 .yellow {
-  background-color: #FFEF73;
+  background-color: #ffef73;
 }
 
 .blue {
-  background-color: #64ABD0;
+  background-color: #64abd0;
 }
 
 .orange {
-  background-color: #FFBF73;
+  background-color: #ffbf73;
 }
 
 body, html {
@@ -121,7 +121,7 @@ body, html {
   padding-right: 25px;
 }
 .about-project-container .about-project-content img {
-  width: 240px;
+  height: 60vh;
   border: thin solid black;
   float: left;
   margin-right: 30px;
@@ -166,13 +166,32 @@ canvas#fractalCanvas {
 .fg-container {
   padding-right: 30px;
   display: flex;
+  justify-content: flex-end;
+}
+.fg-container .forms-container {
+  margin-right: 20px;
+  color: #000;
+}
+.fg-container .forms-container div {
+  display: flex;
   justify-content: space-between;
+  width: 200px;
+  margin-bottom: 5px;
 }
 
 .pg-container {
   padding-left: 30px;
   display: flex;
-  justify-content: space-between;
+}
+.pg-container .form-container {
+  margin-left: 20px;
+}
+.pg-container .form-container > div {
+  width: 200px;
+  margin: 15px 0;
+}
+.pg-container .form-container > div div {
+  margin: 5px 0;
 }
 
 .flex {
@@ -209,15 +228,16 @@ canvas#fractalCanvas {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  cursor: pointer;
 }
 .butt.dark-green {
-  background-color: #4E9600;
+  background-color: #4e9600;
 }
 .butt.dark-pink {
   background-color: #992667;
 }
 .butt.dark-orange {
-  background-color: #BF7E30;
+  background-color: #bf7e30;
 }
 
 .form {
@@ -245,6 +265,30 @@ canvas#fractalCanvas {
 
 form.hidden {
   display: none;
+}
+
+input, select {
+  padding: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 3px solid white;
+  font-size: 18px;
+  border-radius: 0;
+}
+
+input {
+  width: 45px;
+  height: 20px;
+}
+
+select {
+  margin: 2px 0;
+}
+
+button {
+  border: thin solid black;
+  border-radius: 0;
+  height: 30px;
+  font-size: 18px;
 }
 
 /*# sourceMappingURL=styles.css.map */

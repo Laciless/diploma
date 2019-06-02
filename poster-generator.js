@@ -4,8 +4,9 @@ const removeButton = document.getElementById('removeBtn');
 const addTextButton = document.getElementById('addTextBtn');
 const fontSizeInput = document.getElementById('fontSizeInput');
 const fontSelect = document.getElementById('fontFamily');
-const posterColor = document.getElementById('posterColor');
-const setBackgroundColorBtn = document.getElementById('setBackgroundColor');
+const posterFillColor = document.getElementById('posterFillColor');
+const posterStrokeColor = document.getElementById('posterStrokeColor');
+const posterBackgroundColorInput = document.getElementById('posterBackgroundColor');
 const addCircleBtn = document.getElementById('addCircle');
 const addSquareBtn = document.getElementById('addSquare');
 const addTriangleBtn = document.getElementById('addTriangle');
@@ -18,8 +19,8 @@ copyButton.addEventListener('click', () => {
 	});
 });
 
-setBackgroundColorBtn.addEventListener('click', () => {
-    FabricCanvas.setBackgroundColor(posterColor.value, () => {
+posterBackgroundColorInput.addEventListener('change', () => {
+    FabricCanvas.setBackgroundColor(posterBackgroundColorInput.value, () => {
         FabricCanvas.renderAll();
     });
 })
@@ -27,21 +28,24 @@ setBackgroundColorBtn.addEventListener('click', () => {
 addCircleBtn.addEventListener('click', () => {
     const circle = new fabric.Circle({
         radius: 50,
-        fill: posterColor.value,
+        fill: posterFillColor.value,
+        stroke: posterStrokeColor.value,
     })
     FabricCanvas.add(circle);
 })
 
 addTriangleBtn.addEventListener('click', () => {
     const triangle = new fabric.Triangle({
-        fill: posterColor.value,
+        fill: posterFillColor.value,
+        stroke: posterStrokeColor.value,
     })
     FabricCanvas.add(triangle);
 })
 
 addSquareBtn.addEventListener('click', () => {
     const square = new fabric.Rect({
-        fill: posterColor.value,
+        fill: posterFillColor.value,
+        stroke: posterStrokeColor.value,
         height: 50,
         width: 50
     })
@@ -87,12 +91,11 @@ function getFractalDescription() {
 function addText() {
     const fontSize = +fontSizeInput.value;
     const fontFamily = fontSelect.value;
-    const color = posterColor.value;
     const textbox = new fabric.Textbox('text', {
         fontSize,
         fontFamily,
-        stroke: color,
-        fill: color
+        fill: posterFillColor.value,
+        stroke: posterStrokeColor.value,
     });
     FabricCanvas.add(textbox).setActiveObject(textbox);
 }

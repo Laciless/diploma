@@ -34,35 +34,83 @@
                     Fractal generator
                 </h1>
                 <div class="fg-container">
-                    <div class="">
+                    <div class="forms-container">
                         <select id="fractalType">
                             <option value="tree">Pythagoras tree</option>
                             <option value="juliaForm">Julia set</option>
                         </select>
                         <form name="tree" class="tree">
-                            <input type="number" name="iterations" value="5" placeholder="iterations"/>
-                            <input type="number" name="branchLength" value="100" placeholder="length" />
-                            <input type="color" name="colorStart" value="#ff0000"/>
-                            <input type="color" name="colorEnd" value="#115588"/>
+                            <div>
+                                <label>Iterations: </label>
+                                <input type="number" name="iterations" value="5" placeholder="iterations"/>
+                            </div>
+                            <div>
+                                <label>Branch length: </label>
+                                <input type="number" name="branchLength" value="100" placeholder="length" />
+                            </div>
+                            <div>
+                                <label>Color start: </label>
+                                <input type="color" name="colorStart" value="#ff0000"/>
+                            </div>
+                            <div>
+                                <label>Color end: </label>
+                                <input type="color" name="colorEnd" value="#115588"/>
+                            </div>
                             <button id="drawTree">Draw</button>
                         </form>
                         <form name="juliaForm" class="juliaForm hidden">
-                            Итераций (от 100 до 1000): 
-                            <input type="number" name="maxIterations" id="maxIterations" value="450"/>
-                            Коэффициенты: (minX, от -100 до 100)
-                            <input type="number" name="minX" id="minX" value="0" placeholder="minX"/>
-                            (maxX, от -100 до 100)
-                            <input type="number" name="maxX" id="maxX" value="50" placeholder="maxX"/>
-                            (minY, от -100 до 100)
-                            <input type="number" name="minY" id="minY" value="0" placeholder="minY"/>
-                            (maxY, от -100 до 100)
-                            <input type="number" name="maxY" id="maxY" value="50" placeholder="maxY"/>
-                            (jsX, от -100 до 100)
-                            <input type="number" name="jsX" id="jsX" value="28" placeholder="jsX"/>
-                            (jsY, от -100 до 100)
-                            <input type="number" name="jsY" id="jsY" value="1" placeholder="jsY"/>
-                            <input type="color" id="colorStart" value="#ff0000"/>
-                            <input type="color" id="colorEnd" value="#115588"/>
+                            <div>
+                                <label>Итераций (от 100 до 1000): </label>
+                                <input type="number" name="maxIterations" id="maxIterations" value="450"/>
+                            </div>
+                            <div>
+                                <label>
+                                    Коэффициенты: (minX, от -100 до 100)
+                                </label>
+                                <input type="number" name="minX" id="minX" value="0" placeholder="minX"/>
+                            </div>
+                            <div>
+                                <label>
+                                    (maxX, от -100 до 100)
+                                </label>
+                                <input type="number" name="maxX" id="maxX" value="50" placeholder="maxX"/>
+                            </div>
+                            <div>
+                                <label>
+                                    (minY, от -100 до 100)
+                                </label>
+                                <input type="number" name="minY" id="minY" value="0" placeholder="minY"/>
+                            </div>
+                            <div>
+                                <label>
+                                    (maxY, от -100 до 100)
+                                </label>
+                                <input type="number" name="maxY" id="maxY" value="50" placeholder="maxY"/>
+                            </div>
+                            <div>
+                                <label>
+                                    (jsX, от -100 до 100)
+                                </label>
+                                <input type="number" name="jsX" id="jsX" value="28" placeholder="jsX"/>
+                            </div>
+                            <div>
+                                <label>
+                                    (jsY, от -100 до 100)
+                                </label>
+                                <input type="number" name="jsY" id="jsY" value="1" placeholder="jsY"/>
+                            </div>
+                            <div>
+                                <label>
+                                    Color 1
+                                </label>
+                                <input type="color" id="colorStart" value="#ff0000"/>
+                            </div>
+                            <div>
+                                <label>
+                                    Color 2
+                                </label>
+                                <input type="color" id="colorEnd" value="#115588"/>
+                            </div>
                             <button id="drawJulia">Draw</button>
                         </form>
                     </div>
@@ -87,22 +135,39 @@
                             <a class="butt dark-pink" href="#" download="poster.svg" id="savePoster">Save poster</a>
                         </div>
                     </div>
-                    <div class="flex column space-around">
-                        <input type="color" id="posterColor"/>
-                        <button id="setBackgroundColor">Set background</button>
-                        <input type="number" placeholder="font size" value="20" id="fontSizeInput"/>
-                        <select value="Times New Roman" id="fontFamily">
-                            <option value="Times New Roman">Times New Roman</option>
-                            <option value="Roboto">Roboto</option>
-                            <option value="Expletus Sans">Expletus Sans</option>
-                            <option value="Comic Sans">Comic Sans</option>
-                        </select>
-                        <div class="flex">
-                            <button id="addCircle"><img src="./img/circle.png" /></button>
-                            <button id="addSquare"><img src="./img/square.png" /></button>
-                            <button id="addTriangle"><img src="./img/triangle.png" /></button>
+                    <div class="form-container">
+                        <div>
+                            <labal>Background: </labal>
+                            <input type="color" value="#ffffff" id="posterBackgroundColor"/>
                         </div>
-                        <button id="addTextBtn">Add text</button>
+                        <div>
+                            <label>Fill and stroke colors: </label>
+                            <div>
+                                <input type="color" id="posterFillColor"/>
+                                <input type="color" id="posterStrokeColor"/>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                Add Figures: 
+                            </div>
+                            <div class="flex">
+                                <button id="addCircle"><img src="./img/circle.png" /></button>
+                                <button id="addSquare"><img src="./img/square.png" /></button>
+                                <button id="addTriangle"><img src="./img/triangle.png" /></button>
+                            </div>
+                        </div>
+                        <div>
+                            <input class="liiht-pink" type="number" placeholder="font size" value="20" id="fontSizeInput"/>
+                            <select value="Times New Roman" id="fontFamily">
+                                <option value="Times New Roman">Times New Roman</option>
+                                <option value="Roboto">Roboto</option>
+                                <option value="Expletus Sans">Expletus Sans</option>
+                                <option value="Comic Sans">Comic Sans</option>
+                            </select>
+                           
+                            <button id="addTextBtn">Add text</button>
+                        </div>
                         <button id="removeBtn">Remove</button>
                         <button id="copyBtn">Copy</button>
                         <button id="pasteBtn">Paste</button>
