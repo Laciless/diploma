@@ -175,7 +175,7 @@ canvas#fractalCanvas {
 .fg-container .forms-container div {
   display: flex;
   justify-content: space-between;
-  width: 200px;
+  width: 250px;
   margin-bottom: 5px;
 }
 
@@ -187,7 +187,7 @@ canvas#fractalCanvas {
   margin-left: 20px;
 }
 .pg-container .form-container > div {
-  width: 200px;
+  width: 250px;
   margin: 15px 0;
 }
 .pg-container .form-container > div div {
@@ -289,6 +289,7 @@ button {
   border-radius: 0;
   height: 30px;
   font-size: 18px;
+  background-color: white;
 }
 
 /*# sourceMappingURL=styles.css.map */

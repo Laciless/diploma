@@ -10,6 +10,8 @@ const posterBackgroundColorInput = document.getElementById('posterBackgroundColo
 const addCircleBtn = document.getElementById('addCircle');
 const addSquareBtn = document.getElementById('addSquare');
 const addTriangleBtn = document.getElementById('addTriangle');
+const toBackBtn = document.getElementById('toBack');
+const toFrontBtn = document.getElementById('toFront');
 
 let _clipboard;
 
@@ -23,7 +25,20 @@ posterBackgroundColorInput.addEventListener('change', () => {
     FabricCanvas.setBackgroundColor(posterBackgroundColorInput.value, () => {
         FabricCanvas.renderAll();
     });
-})
+});
+
+toBackBtn.addEventListener('click', () => {
+    const el = FabricCanvas.getActiveObject();
+    if (el) {
+        FabricCanvas.sendToBack(el);
+    }
+});
+toFrontBtn.addEventListener('click', () => {
+    const el = FabricCanvas.getActiveObject();
+    if (el) {
+        FabricCanvas.bringToFront(el);
+    }
+});
 
 addCircleBtn.addEventListener('click', () => {
     const circle = new fabric.Circle({
