@@ -150,10 +150,12 @@ body, html {
   justify-content: flex-end;
   margin-right: 33px;
 }
+.footer .footer-item.right a {
+  margin-left: 30px;
+}
 .footer .footer-item.right img {
   height: 36px;
   width: 36px;
-  margin-left: 30px;
 }
 
 canvas {

@@ -134,10 +134,12 @@ body, html {
         &.right {
             justify-content: flex-end;
             margin-right: 33px;
-            img {
+            a {
+                margin-left: 30px;
+            }
+            img { 
                 height: 36px;
                 width: 36px;
-                margin-left: 30px;
             }
         }
     }

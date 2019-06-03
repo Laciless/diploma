@@ -3,6 +3,10 @@ const firstColorPicker = document.forms["tree"].elements["colorStart"];
 const endColorPicker = document.forms["tree"].elements["colorEnd"];
 const iterationsInput = document.forms["tree"].elements["iterations"];
 const lengthInput = document.forms["tree"].elements["branchLength"];
+const widthInput = document.forms["tree"].elements["branchWidth"];
+const angleAllInput = document.forms["tree"].elements["angleAll"];
+const branchAngleInput = document.forms["tree"].elements["branchAngle"];
+const scaleInput = document.forms["tree"].elements["scale"];
 const drawTreeButton = document.getElementById("drawTree");
 
 document.forms["tree"].addEventListener('submit', (e) => {
@@ -28,6 +32,10 @@ function drawTree() {
     const endColor = hexToRgb(endColorPicker.value);
     const iterations = iterationsInput.value; 
     const length = lengthInput.value; 
+    const width = widthInput.value;
+    const angleAll = angleAllInput.value / 100;
+    const branchAngle = branchAngleInput.value / 100;
+    const scale = scaleInput.value / 100;
 
     const rStep = Math.floor((startColor.r - endColor.r) / iterations);
     const gStep = Math.floor((startColor.g - endColor.g) / iterations);
@@ -37,7 +45,7 @@ function drawTree() {
     context.clearRect(0, 0, context.canvas.width, context.canvas.height) //Очищаем холст
     context.translate(fractalCanvas.clientWidth / 2, 0); // Центрируем дерево
 
-    branch(length, 2, 0.4, 0.7, 0.75, iterations, startColor, {
+    branch(length, width, angleAll, branchAngle, scale, iterations, startColor, {
         r: rStep,
         g: gStep,
         b: bStep
