@@ -12,6 +12,8 @@ const addSquareBtn = document.getElementById('addSquare');
 const addTriangleBtn = document.getElementById('addTriangle');
 const toBackBtn = document.getElementById('toBack');
 const toFrontBtn = document.getElementById('toFront');
+const addImageBtn = document.getElementById('addImage');
+const fileInput = document.getElementById('file');
 
 let _clipboard;
 
@@ -20,6 +22,18 @@ copyButton.addEventListener('click', () => {
 		_clipboard = cloned;
 	});
 });
+
+addImageBtn.addEventListener('click', () => {
+    const file = fileInput.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function () {
+        addImageFromUlr(reader.result);
+    };
+    reader.onerror = function (error) {
+        console.log('Error: ', error);
+    };
+})
 
 posterBackgroundColorInput.addEventListener('change', () => {
     FabricCanvas.setBackgroundColor(posterBackgroundColorInput.value, () => {
