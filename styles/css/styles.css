@@ -314,4 +314,10 @@ button {
   cursor: pointer;
 }
 
+.figureBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /*# sourceMappingURL=styles.css.map */
