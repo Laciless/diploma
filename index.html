@@ -38,6 +38,7 @@
                         <select id="fractalType">
                             <option value="tree">Pythagoras tree</option>
                             <option value="juliaForm">Julia set</option>
+                            <option value="plasma">Plasma</option>
                         </select>
                         <br/>
                         <br/>
@@ -113,12 +114,6 @@
                             </div>
                             <div>
                                 <label>
-                                    jsY (-100 to 100)
-                                </label>
-                                <input type="number" name="jsY" id="jsY" value="1" placeholder="jsY"/>
-                            </div>
-                            <div>
-                                <label>
                                     Color 1
                                 </label>
                                 <input type="color" id="colorStart" value="#ff0000"/>
@@ -130,6 +125,29 @@
                                 <input type="color" id="colorEnd" value="#115588"/>
                             </div>
                             <button id="drawJulia">Draw</button>
+                        </form>
+                        <form name="plasma" class="plasma hidden">
+                            <div>
+                                <label>Top left color: </label>
+                                <input type="color" name="colorP1" value="#ff0000"/>
+                            </div>
+                            <div>
+                                <label>Top right color: </label>
+                                <input type="color" name="colorP2" value="#115588"/>                                
+                            </div>
+                            <div>
+                                <label>Bottom right color: </label>
+                                <input type="color" name="colorP3" value="#00ff00"/>                                
+                            </div>
+                            <div>
+                                <label>Bottom left color: </label>
+                                <input type="color" name="colorP4" value="#551188"/>
+                            </div>
+                            <div>
+                                <label>Roughness: </label>
+                                <input type="number" name="rough" value="0" id="rough"/>
+                            </div>
+                            <button>Draw</button>
                         </form>
                     </div>
                     <div>
@@ -267,6 +285,7 @@
 <script src="main.js"></script>
 <script src="tree.js"></script>
 <script src="julia.js"></script>
+<script src="plasma.js"></script>
 <script src="poster-generator.js"></script>
 <script src="low-buttons-handler.js"></script>
 

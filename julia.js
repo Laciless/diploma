@@ -57,8 +57,7 @@ function drawJulia() {
  if (maxY === 'undefined') maxY=0.5;
  jsX = parseFloat(document.juliaForm.jsX.value)/100;
  if (jsX === 'undefined') jsX=0.285;
- jsY = parseFloat(document.juliaForm.jsY.value)/100;
- if (jsY === 'undefined') jsY=0.01;
+ jsY=0.01;
 
 
 
